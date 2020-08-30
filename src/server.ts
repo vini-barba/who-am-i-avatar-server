@@ -9,7 +9,6 @@ import routes from './routes';
 import './config/mongo';
 
 const PORT = Number(process.env.PORT);
-
 const app = new App({
   port: PORT,
   routes,
@@ -19,4 +18,5 @@ const app = new App({
     cors(),
   ],
 });
+
 app.listen();

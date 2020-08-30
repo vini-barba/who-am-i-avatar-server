@@ -1,8 +1,12 @@
 import { Router } from 'express';
-import userRoutes from './users.route';
+import usersRoutes from './users.route';
+import roomsRoutes from './rooms.route';
+import gamesRoutes from './games.route';
 
 const router = Router();
 
-router.use(userRoutes);
+router.use(usersRoutes);
+router.use(roomsRoutes);
+router.use(gamesRoutes);
 
 export default router;

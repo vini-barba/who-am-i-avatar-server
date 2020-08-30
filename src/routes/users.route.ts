@@ -7,14 +7,14 @@ const router = Router();
 router.post('/users', async (req, res) => {
   try {
     const userData = req.body.user || {};
-    const userCreated = await userController.addUser(userData);
-    return res.json(userCreated);
+    const createdUser = await userController.addUser(userData);
+    return res.json(createdUser);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
 });
 
-router.get('/users', async (req, res) => {
+router.get('/users/:email', async (req, res) => {
   try {
     const { email } = req.params;
     const user = await userController.getUser(email);
