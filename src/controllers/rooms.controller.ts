@@ -14,13 +14,6 @@ export const editRoom = async (roomId: string, roomData: IRoom) => {
 
   if (room.length === 0) return { message: "Room doesn't exist" };
 
-  if (roomData.player2 === room[0].player1) return room;
-  if (roomData.player2 === room[0].player2) return room;
-  if (roomData.player1 === room[0].player1) return room;
-  if (roomData.player1 === room[0].player2) return room;
-
-  if (room[0].player1 !== null && room[0].player2 !== null) return room;
-
   return roomsService.update(roomId, roomData);
 };
 
